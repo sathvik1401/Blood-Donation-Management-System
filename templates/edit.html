@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-4 shadow">
+  <h2 class="text-center text-warning mb-3">Edit Donor Information</h2>
+ <form method="POST" action="{{ url_for('edit_donor', id=donor.id) }}">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" value="{{ donor.name }}" required>
+    </div>
+    <div class="mb-3">
+  <label class="form-label">Blood Group</label>
+  <div class="input-group">
+    <span class="input-group-text bg-danger text-white">
+      <i class="bi bi-droplet-fill"></i>
+    </span>
+    <select name="blood_group" class="form-control" required>
+      <option value="" disabled>Select your blood group</option>
+      <option value="A+" {% if donor.blood_group == "A+" %}selected{% endif %}>A+</option>
+      <option value="A-" {% if donor.blood_group == "A-" %}selected{% endif %}>A-</option>
+      <option value="B+" {% if donor.blood_group == "B+" %}selected{% endif %}>B+</option>
+      <option value="B-" {% if donor.blood_group == "B-" %}selected{% endif %}>B-</option>
+      <option value="O+" {% if donor.blood_group == "O+" %}selected{% endif %}>O+</option>
+      <option value="O-" {% if donor.blood_group == "O-" %}selected{% endif %}>O-</option>
+      <option value="AB+" {% if donor.blood_group == "AB+" %}selected{% endif %}>AB+</option>
+      <option value="AB-" {% if donor.blood_group == "AB-" %}selected{% endif %}>AB-</option>
+    </select>
+  </div>
+</div>
+
+    <div class="mb-3">
+      <label class="form-label">Phone</label>
+      <input type="text" class="form-control" name="phone" value="{{ donor.phone }}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Location</label>
+      <input type="text" class="form-control" name="location" value="{{ donor.location }}" required>
+    </div>
+    <button type="submit" class="btn btn-warning w-100">Update</button>
+  </form>
+</div>
+{% endblock %}
