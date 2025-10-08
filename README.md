@@ -16,25 +16,7 @@ A simple yet complete Flask-based web application for managing blood donors — 
 
 
 
-🏗️ Project Structure
 
-BLOOD_DONATION_APP/
-│
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│
-├── templates/
-│   ├── base.html
-│   ├── index.html
-│   ├── donors.html
-│   ├── success.html
-│
-├── app.py
-├── requirements.txt
-└── README.md
 
 
 
